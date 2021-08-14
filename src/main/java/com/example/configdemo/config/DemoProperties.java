@@ -10,9 +10,18 @@ public class DemoProperties {
   private String url;
   private String username;
   private String password;
+  private String driverClassName;
 
   public String getUrl() {
     return url;
+  }
+
+  public String getDriverClassName() {
+    return driverClassName;
+  }
+
+  public void setDriverClassName(String driverClassName) {
+    this.driverClassName = driverClassName;
   }
 
   public void setUrl(String url) {
