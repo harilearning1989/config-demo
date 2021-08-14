@@ -22,17 +22,20 @@ pipeline{
     }
     stages
     {
-       stage('Gradle')
+       stage('Maven')
        {
           steps
           {
              withEnv(["JAVA_HOME=${tool 'JAVA_HOME'}", "PATH=${tool 'JAVA_HOME'}/bin:${env.PATH}"])
              {
-                git 'https://github.com/harilearning1989/spring-rest-oracle-k8s.git'
+                git 'https://github.com/harilearning1989/config-demo.git'
                 sh 'java -version'
-                echo "Gradle"
-                sh "${grdlCmd} -v"
-                sh "${grdlCmd} clean build"
+                //echo "Gradle"
+                //sh "${grdlCmd} -v"
+                //sh "${grdlCmd} clean build"
+                echo "Maven"
+                sh "${mvnCmd} -v"
+                sh "${mvnCmd} clean install"
              }
           }
        }
