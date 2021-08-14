@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: config-demo-prod
+  name: config-demo-prod
+  namespace: spring-boot-examples
+spec:
+  containers:
+    - image: harilearning1989/config-demo:4
+      name: config-demo
+      ports:
+        - containerPort: 8081
+      imagePullPolicy: IfNotPresent
+      env:      
+        - name: SPRING_PROFILE
+          value: dev
+        - name: SPRING_APPLICATION_JSON
+          valueFrom:
+            configMapKeyRef:
+              name: spring-config-prod
+              key: prod-config.json
+  restartPolicy: Never  
+                  
+          
+                

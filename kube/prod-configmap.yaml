@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: spring-config-prod
+  namespace: spring-boot-examples
+data:
+  prod-config.json:
+    '{
+      "example.datasource.url": "jdbc:mysql://prod-endpoint/example",
+      "example.datasource.username": "prod-root",
+      "example.datasource.password": "prod-pass"
+     }'
