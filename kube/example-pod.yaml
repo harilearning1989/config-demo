@@ -4,12 +4,13 @@ metadata:
   labels:
     app: config-demo
   name: config-demo
+  namespace: spring-boot-examples
 spec:
   containers:
-    - image: config-demo:latest
+    - image: harilearning1989/config-demo:4
       name: config-demo
       ports:
-        - containerPort: 8080
+        - containerPort: 8081
       imagePullPolicy: IfNotPresent
       env:      
         - name: SPRING_PROFILE
